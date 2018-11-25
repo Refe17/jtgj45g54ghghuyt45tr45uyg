@@ -3,7 +3,11 @@ const client = new Discord.Client();
 const moment = require('moment');
 const jimp = require('jimp');
 const Canvas = require('canvas');
- 
+
+client.on('ready', () => {
+    console.log(client.user.tag + ' Ready!');
+});
+
 client.on('guildMemberAdd', member => {
      const welcomer =  member.guild.channels.find(c => c.id == '515164892223897601');
      const w = ['./welcome.png'];
@@ -52,4 +56,4 @@ client.on('guildMemberAdd', member => {
     });                    
 });
 
-client.login();
+client.login(process.env.BOT_TOKEN);
