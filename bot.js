@@ -35,12 +35,6 @@ client.on('guildMemberAdd', member => {
                         ctx.fontSize = '20px';
                         ctx.fillStyle = "#f1f1f1";
                         ctx.textAlign = "center";
-                        ctx.fillText(`Welcome To MarsMC Network`, 300, 130);
-                       
-                        ctx.font = "bold 12px Arial";
-                        ctx.fontSize = '20px';
-                        ctx.fillStyle = "#f1f1f1";
-                        ctx.textAlign = "center";
                         ctx.fillText(member.user.username, 200, 150);
  
                 let Avatar = Canvas.Image;
