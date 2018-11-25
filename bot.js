@@ -14,7 +14,7 @@ client.on('guildMemberAdd', member => {
      const w = ['./welcome.png'];
  
          let Image = Canvas.Image,
-            canvas = new Canvas(400, 200),
+            canvas = new Canvas(400, 300),
             ctx = canvas.getContext('2d');
             fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
             if (err) return console.log(err);
