@@ -5,13 +5,13 @@ const jimp = require('jimp');
 const Canvas = require('canvas');
  
 client.on('guildMemberAdd', member => {
-     const welcomer =  member.guild.channels.find('name', 'welcome');
-const w = ['./w1.png'];
+     const welcomer =  member.guild.channels.find(c => c.id == '515164892223897601');
+     const w = ['./welcome.png'];
  
          let Image = Canvas.Image,
             canvas = new Canvas(400, 200),
             ctx = canvas.getContext('2d');
-        fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
+            fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
             if (err) return console.log(err);
             let BG = Canvas.Image;
             let ground = new Image;
