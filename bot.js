@@ -31,11 +31,11 @@ client.on('guildMemberAdd', member => {
                     ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
                         if (err) return console.log(err);
                        
-                        ctx.font = "bold 12px Arial";
+                        ctx.font = "bold 14px Arial";
                         ctx.fontSize = '20px';
                         ctx.fillStyle = "#f1f1f1";
                         ctx.textAlign = "center";
-                        ctx.fillText(member.user.username, 200, 200);
+                        ctx.fillText(member.user.username, 210, 200);
  
                 let Avatar = Canvas.Image;
                               let ava = new Avatar;
@@ -44,7 +44,7 @@ client.on('guildMemberAdd', member => {
                               ctx.arc(77, 101, 62, 0, Math.PI*2);
                               ctx.stroke();
                                  ctx.clip();
-                                 ctx.drawImage(ava, 0, 0, 144, 142);
+                                 ctx.drawImage(ava, 0, 0, 144, 200);
           welcomer.sendFile(canvas.toBuffer())
           })
       })
