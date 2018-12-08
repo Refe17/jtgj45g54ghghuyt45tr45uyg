@@ -44,7 +44,7 @@ client.on('guildMemberAdd', member => {
                               ctx.arc(77, 145, 73, 0, Math.PI*2);
                               ctx.stroke();
                                  ctx.clip();
-                                 ctx.drawImage(ava, 60, 100, 50, 50);
+                                 ctx.drawImage(ava, 55, 130, 50, 50);
           welcomer.send({
               file: canvas.toBuffer()
           });
