@@ -10,7 +10,7 @@ client.on('ready', () => {
 });
 
 client.on('guildMemberAdd', member => {
-     const welcomer =  member.guild.channels.find(c => c.id == '515164892223897601');
+     const welcomer =  member.guild.channels.find(c => c.id == '494165051490566176');
      const w = ['./welcome.png'];
  
          let Image = Canvas.Image,
