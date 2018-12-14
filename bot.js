@@ -10,6 +10,7 @@ client.on('ready', () => {
 });
 
 client.on('guildMemberAdd', member => {
+     member.guild.members.get(member.id).addRole(member.guild.roles.get('494159611767554058'));
      const welcomer =  member.guild.channels.find(c => c.id == '494165051490566176');
      const w = ['./welcome.png'];
  
@@ -50,7 +51,7 @@ client.on('guildMemberAdd', member => {
           });
           })
       })
-    });                    
+    });
 });
 
 client.login(process.env.BOT_TOKEN);
