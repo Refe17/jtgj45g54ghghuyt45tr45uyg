@@ -72,7 +72,7 @@ client.on('guildMemberAdd', member => {
             var invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
             var inviter = client.users.get(invite.inviter.id);
             var chat = member.guild.channels.get('494165051490566176');
-            chat.send(`${member} Joined by **${inviter.tag}**.`);
+            chat.send(`${member} Joined by **${inviter.tag}**.`).catch(err => console.log(err));
         });
 });
 
