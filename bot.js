@@ -54,4 +54,26 @@ client.on('guildMemberAdd', member => {
     });
 });
 
+const invites = {};
+const wait = require('util').promisify(setTimeout);
+
+client.on('ready', () => {
+        wait(1000);
+        client.guilds.forEach(g => {
+                g.fetchInvites().then(guildInvites => {
+                        invites[g.id] = guildInvites;
+                });
+        });
+});
+client.on('guildMemberAdd', member => {
+        member.guild.fetchInvites().then(guildInvites => {
+            var ei = invites[member.guild.id];
+            invites[member.guild.id] = guildInvites;
+            var invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+            var inviter = client.users.get(invite.inviter.id);
+            var chat = member.guild.channels.get('494165051490566176');
+            chat.send(`${member} Joined by **${inviter.tag}**.`);
+        });
+});
+
 client.login(process.env.BOT_TOKEN);
