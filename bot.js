@@ -20,14 +20,14 @@ client.on('guildMemberAdd', member => {
     if(!welcomer) return;
  
          let Image = Canvas.Image,
-            canvas = new Canvas(400, 270),
+            canvas = new Canvas(450, 270),
             ctx = canvas.getContext('2d');
             fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
             if (err) return console.log(err);
             let BG = Canvas.Image;
             let ground = new Image;
             ground.src = Background;
-            ctx.drawImage(ground, 0, 0, 400, 270);
+            ctx.drawImage(ground, 0, 0, 450, 270);
              
          
  
