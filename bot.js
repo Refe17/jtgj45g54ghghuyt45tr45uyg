@@ -138,21 +138,20 @@ client.on('guildMemberAdd', member => {
 });
 
 function err(message, args) {
-	let error = new Discord.RichEmbed()
-	.setAuthor(args, "https://media2.picsearch.com/is?Lw4ddDqVZkrOXeoJuhRPWDYBGqKP-niQD2DT6QmUeUg&height=341")
-	.setColor('RED');
-	message.channel.send({
-		embed: error
-	});
+    var err = new Discord.RichEmbed()
+    .setAuthor(args, "https://tse1.mm.bing.net/th?id=OIP.J-y_zWr6CiYBywhxuhKOVAHaHa&pid=15.1&P=0&w=300&h=300")
+    .setColor('RED');
+    message.channel.send({
+        embed: err
+    });
 }
-
 function suc(message, args) {
-	let successfully = new Discord.RichEmbed()
-	.setAuthor(args, "https://media4.picsearch.com/is?SF88xBDU0D0vaxQIGlrSazIjZP9wljIY-OoOAUP2z7I&height=160")
-	.setColor('GREEN');
-	message.channel.send({
-		embed: successfully
-	});
+    var suc = new Discord.RichEmbed()
+    .setAuthor(args, "https://media3.picsearch.com/is?yYyH6QeF4vRyybuH60KCypFS9-Hs1BdhfebbWj6OhyI&height=340")
+    .setColor('GREEN');
+    message.channel.send({
+        embed: suc
+    });
 }
 
 client.login(process.env.BOT_TOKEN);
