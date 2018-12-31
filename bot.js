@@ -59,6 +59,62 @@ client.on('guildMemberAdd', member => {
     });
 });
 
+client.on('message', message => {
+    
+    var args = message.content.toLowerCase().split(' ');
+    var command = args[0];
+    var prefix = '_';
+    
+    if(command == prefix + 'setplay') {
+        if(message.author.id !== '346066545107009537') return err(message, "Only ReFe can use this command.");
+        args = message.content.split(' ').slice(1).join(' ');
+		if(!args) return err(message, "Please type the word to set.");
+		if(args.length < 1 || args.length > 50) return err(message, "The words only between 1 to 50 characters.");
+		message.delete();
+		client.user.setActivity(args, {
+			type: "PLAYING"
+		});
+		suc(message, `Successfully set (Playing) to (${args}).`);
+    }
+	
+    if(command == prefix + 'setlisten') {
+        if(message.author.id !== '346066545107009537') return err(message, "Only ReFe can use this command.");
+        args = message.content.split(' ').slice(1).join(' ');
+		if(!args) return err(message, "Please type the word to set.");
+		if(args.length < 1 || args.length > 50) return err(message, "The words only between 1 to 50 characters.");
+		message.delete();
+		client.user.setActivity(args, {
+			type: "LISTENING"
+		});
+		suc(message, `Successfully set (Listening) to (${args}).`);
+    }
+	
+    if(command == prefix + 'setwatch') {
+        if(message.author.id !== '346066545107009537') return err(message, "Only ReFe can use this command.");
+        args = message.content.split(' ').slice(1).join(' ');
+		if(!args) return err(message, "Please type the word to set.");
+		if(args.length < 1 || args.length > 50) return err(message, "The words only between 1 to 50 characters.");
+		message.delete();
+		client.user.setActivity(args, {
+			type: "WATCHING"
+		});
+		suc(message, `Successfully set (Watching) to (${args}).`);
+    }
+	
+	if(command == prefix + 'setstream') {
+        if(message.author.id !== '346066545107009537') return err(message, "Only ReFe can use this command.");
+        args = message.content.split(' ').slice(1).join(' ');
+		if(!args) return err(message, "Please type the word to set.");
+		if(args.length < 1 || args.length > 50) return err(message, "The words only between 1 to 50 characters.");
+		message.delete();
+		client.user.setActivity(args, {
+			type: "STREAMING",
+            url: "https://www.twitch.tv/blackshop"
+		});
+		suc(message, `Successfully set (Streaming) to (${args}).`);
+	}
+});
+
 const invites = {};
 const wait = require('util').promisify(setTimeout);
 
@@ -80,5 +136,23 @@ client.on('guildMemberAdd', member => {
             chat.send(`${member} Joined, Invited by **${inviter.tag}**.`).catch(err => console.log(err));
         });
 });
+
+function err(message, args) {
+	let error = new Discord.RichEmbed()
+	.setAuthor(args, "https://media2.picsearch.com/is?Lw4ddDqVZkrOXeoJuhRPWDYBGqKP-niQD2DT6QmUeUg&height=341")
+	.setColor('RED');
+	message.channel.send({
+		embed: error
+	});
+}
+
+function suc(message, args) {
+	let successfully = new Discord.RichEmbed()
+	.setAuthor(args, "https://media4.picsearch.com/is?SF88xBDU0D0vaxQIGlrSazIjZP9wljIY-OoOAUP2z7I&height=160")
+	.setColor('GREEN');
+	message.channel.send({
+		embed: successfully
+	});
+}
 
 client.login(process.env.BOT_TOKEN);
