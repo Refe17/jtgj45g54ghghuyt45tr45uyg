@@ -20,14 +20,14 @@ client.on('guildMemberAdd', member => {
     if(!welcomer) return;
  
          let Image = Canvas.Image,
-            canvas = new Canvas(450, 270),
+            canvas = new Canvas(460, 270),
             ctx = canvas.getContext('2d');
             fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
             if (err) return console.log(err);
             let BG = Canvas.Image;
             let ground = new Image;
             ground.src = Background;
-            ctx.drawImage(ground, 0, 0, 450, 270);
+            ctx.drawImage(ground, 0, 0, 460, 270);
              
          
  
@@ -41,7 +41,7 @@ client.on('guildMemberAdd', member => {
                         ctx.fontSize = '20px';
                         ctx.fillStyle = "#f1f1f1";
                         ctx.textAlign = "center";
-                        ctx.fillText(member.user.username, 210, 200);
+                        ctx.fillText(member.user.username, 210, 230);
  
                 let Avatar = Canvas.Image;
                               let ava = new Avatar;
