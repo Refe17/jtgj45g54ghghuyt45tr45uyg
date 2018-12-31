@@ -20,14 +20,14 @@ client.on('guildMemberAdd', member => {
     if(!welcomer) return;
  
          let Image = Canvas.Image,
-            canvas = new Canvas(460, 270),
+            canvas = new Canvas(470, 270),
             ctx = canvas.getContext('2d');
             fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
             if (err) return console.log(err);
             let BG = Canvas.Image;
             let ground = new Image;
             ground.src = Background;
-            ctx.drawImage(ground, 0, 0, 460, 270);
+            ctx.drawImage(ground, 0, 0, 470, 270);
              
          
  
@@ -37,11 +37,11 @@ client.on('guildMemberAdd', member => {
                     ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
                         if (err) return console.log(err);
                        
-                        ctx.font = "bold 14px Arial";
+                        ctx.font = "bold 16px Arial";
                         ctx.fontSize = '20px';
                         ctx.fillStyle = "#f1f1f1";
                         ctx.textAlign = "center";
-                        ctx.fillText(member.user.username, 290, 150);
+                        ctx.fillText(member.user.username, 320, 130);
  
                 let Avatar = Canvas.Image;
                               let ava = new Avatar;
