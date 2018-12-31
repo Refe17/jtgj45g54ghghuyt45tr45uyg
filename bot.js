@@ -7,12 +7,14 @@ const Canvas = require('canvas');
 
 client.on('ready', () => {
     console.log(client.user.tag + ' Ready!');
+    client.user.setAvatar("https://cdn.discordapp.com/attachments/426968702072913921/529266100723122198/JPEG_20181231_135048.jpg");
 });
 
 client.on('guildMemberAdd', member => {
      member.guild.members.get(member.id).addRole(member.guild.roles.get('494159611767554058'));
      const welcomer =  member.guild.channels.find(c => c.id == '494165051490566176');
-     const w = ['./welcome.png'];
+     const w = ['./welcome (1).png'];
+    if(!welcomer) return;
  
          let Image = Canvas.Image,
             canvas = new Canvas(360, 270),
