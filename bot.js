@@ -7,7 +7,10 @@ const Canvas = require('canvas');
 
 client.on('ready', () => {
     console.log(client.user.tag + ' Ready!');
-    client.user.setAvatar("https://cdn.discordapp.com/attachments/426968702072913921/529266100723122198/JPEG_20181231_135048.jpg");
+    client.user.setActivity('Black Shop.', {
+        type: "STREAMING",
+        url: "https://www.twitch.tv/blackshop"
+    });
 });
 
 client.on('guildMemberAdd', member => {
@@ -17,7 +20,7 @@ client.on('guildMemberAdd', member => {
     if(!welcomer) return;
  
          let Image = Canvas.Image,
-            canvas = new Canvas(360, 270),
+            canvas = new Canvas(360, 300),
             ctx = canvas.getContext('2d');
             fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
             if (err) return console.log(err);
